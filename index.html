@@ -1,60 +1,119 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <link rel="stylesheet"
-    href="style.css">
-    <title>Gamma and Beta Function</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gamma and Beta Functions</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<h1>Gamma and Beta Function</h1>
 
-<h2>Introduction</h2>
-<p>
-Gamma and Beta functions are important mathematical functions used in calculus, engineering, and physics.
-</p>
+    <header>
+        <h1>Gamma and Beta Functions</h1>
+        <p>Special Functions in Mathematics</p>
+    </header>
 
-<h2>History</h2>
-<p>
-The Gamma function was developed by Leonhard Euler. It extends the factorial function to real and complex numbers.
-</p>
+    <nav>
+        <a href="#intro">Introduction</a>
+        <a href="#history">History</a>
+        <a href="#formula">Formulas</a>
+        <a href="#graph">Graphs</a>
+        <a href="#examples">Examples</a>
+        <a href="#quiz">Quiz</a>
+        <a href="#reference">References</a>
+    </nav>
 
-<h2>Formulas</h2>
+    <section id="intro">
+        <h2>Introduction</h2>
+        <p>
+            Gamma and Beta functions are important mathematical functions
+            used in calculus, physics, engineering, and probability theory.
+        </p>
+    </section>
 
-<h3>Gamma Function</h3>
-<p>Γ(n) = (n-1)!</p>
+    <section id="history">
+        <h2>History</h2>
+        <p>
+            The Gamma function was introduced by Leonhard Euler.
+            It extends factorial values to real and complex numbers.
+        </p>
+    </section>
 
-<h3>Beta Function</h3>
-<p>B(x,y)= Γ(x)Γ(y) / Γ(x+y)</p>
+    <section id="formula">
+        <h2>Important Formulas</h2>
 
-<h2>Graphs</h2>
-<img src="https://upload.wikimedia.org/wikipedia/commons/e/e5/Gamma_Function.png" width="400">
+        <div class="card">
+            <h3>Gamma Function</h3>
+            <p>Γ(n) = (n - 1)!</p>
+        </div>
 
-<h2>Solved Example</h2>
-<p>
-Find Γ(5)
-</p>
+        <div class="card">
+            <h3>Beta Function</h3>
+            <p>B(x,y) = Γ(x)Γ(y) / Γ(x+y)</p>
+        </div>
+    </section>
 
-<p>
-Γ(5) = (5-1)! = 4! = 24
-</p>
+    <section id="graph">
+        <h2>Graphs</h2>
 
-<h2>MCQ Quiz</h2>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/e/e5/Gamma_Function.png" alt="Gamma Graph">
 
-<p>1. Who developed Gamma Function?</p>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/7/74/Beta_Function.png" alt="Beta Graph">
+    </section>
 
-<input type="radio"> Newton <br>
-<input type="radio"> Euler <br>
-<input type="radio"> Einstein <br><br>
+    <section id="examples">
+        <h2>Solved Examples</h2>
 
-<button>Submit</button>
+        <div class="card">
+            <h3>Example 1</h3>
+            <p>Find Γ(5)</p>
+            <p>Γ(5) = 4! = 24</p>
+        </div>
 
-<h2>References</h2>
+        <div class="card">
+            <h3>Example 2</h3>
+            <p>Find B(2,3)</p>
+            <p>B(2,3)= Γ(2)Γ(3)/Γ(5)</p>
+        </div>
+    </section>
 
-<ul>
-<li>Engineering Mathematics Book</li>
-<li>Wikipedia</li>
-<li>Lecture Notes</li>
-</ul>
+    <section id="quiz">
+        <h2>MCQ Quiz</h2>
+
+        <div class="card">
+            <p>1. Gamma function is extension of?</p>
+            <button onclick="checkAnswer('a')">Factorial</button>
+            <button onclick="checkAnswer('b')">Matrix</button>
+        </div>
+
+        <p id="result"></p>
+    </section>
+
+    <section id="reference">
+        <h2>References</h2>
+
+        <ul>
+            <li>Engineering Mathematics Book</li>
+            <li>Wikipedia</li>
+            <li>Mathematics Notes</li>
+        </ul>
+    </section>
+
+    <footer>
+        <p>Created by Matrix Makers Team</p>
+    </footer>
+
+<script>
+function checkAnswer(answer) {
+    let result = document.getElementById("result");
+
+    if(answer === 'a') {
+        result.innerHTML = "Correct Answer!";
+    } else {
+        result.innerHTML = "Wrong Answer!";
+    }
+}
+</script>
 
 </body>
 </html>
