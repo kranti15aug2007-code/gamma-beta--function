@@ -1,118 +1,341 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gamma and Beta Functions</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Gamma and Beta Functions</title>
+
+<!-- KaTeX CSS -->
+<link rel="stylesheet"
+href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+
+<!-- KaTeX JS -->
+<script defer
+src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+
+<!-- Auto Render -->
+<script defer
+src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+onload="renderMathInElement(document.body);"></script>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family: Arial, sans-serif;
+background:#f2f6ff;
+color:#222;
+line-height:1.6;
+}
+
+header{
+background:linear-gradient(135deg,#1f4cff,#6a8dff);
+color:white;
+padding:40px;
+text-align:center;
+}
+
+header h1{
+font-size:42px;
+margin-bottom:10px;
+}
+
+header p{
+font-size:18px;
+}
+
+.container{
+width:90%;
+max-width:1100px;
+margin:auto;
+padding:20px;
+}
+
+.card{
+background:white;
+padding:25px;
+margin:20px 0;
+border-radius:15px;
+box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+
+.card h2{
+color:#1f4cff;
+margin-bottom:15px;
+}
+
+.formula{
+background:#eef3ff;
+padding:15px;
+border-radius:10px;
+margin:15px 0;
+font-size:24px;
+overflow-x:auto;
+}
+
+ul{
+padding-left:20px;
+}
+
+.quiz-box{
+background:#eef3ff;
+padding:20px;
+border-radius:10px;
+margin-top:15px;
+}
+
+button{
+background:#1f4cff;
+color:white;
+border:none;
+padding:10px 20px;
+margin-top:10px;
+border-radius:8px;
+cursor:pointer;
+font-size:16px;
+}
+
+button:hover{
+background:#1639c8;
+}
+
+input, textarea{
+width:100%;
+padding:12px;
+margin:10px 0;
+border:1px solid #ccc;
+border-radius:8px;
+}
+
+footer{
+background:#1f4cff;
+color:white;
+text-align:center;
+padding:20px;
+margin-top:30px;
+}
+
+</style>
 </head>
+
 <body>
 
-    <header>
-        <h1>Gamma and Beta Functions</h1>
-        <p>Special Functions in Mathematics</p>
-    </header>
+<header>
+<h1>Gamma and Beta Functions</h1>
+<p>Engineering Mathematics Project</p>
+</header>
 
-    <nav>
-        <a href="#intro">Introduction</a>
-        <a href="#history">History</a>
-        <a href="#formula">Formulas</a>
-        <a href="#graph">Graphs</a>
-        <a href="#examples">Examples</a>
-        <a href="#quiz">Quiz</a>
-        <a href="#reference">References</a>
-    </nav>
+<div class="container">
 
-    <section id="intro">
-        <h2>Introduction</h2>
-        <p>
-            Gamma and Beta functions are important mathematical functions
-            used in calculus, physics, engineering, and probability theory.
-        </p>
-    </section>
+<!-- AIM -->
+<div class="card">
+<h2>Aim</h2>
 
-    <section id="history">
-        <h2>History</h2>
-        <p>
-            The Gamma function was introduced by Leonhard Euler.
-            It extends factorial values to real and complex numbers.
-        </p>
-    </section>
+<p>
+To study Gamma and Beta functions, understand their mathematical properties,
+evaluate integrals using these functions, and explore their applications in
+engineering and science.
+</p>
+</div>
 
-    <section id="formula">
-        <h2>Important Formulas</h2>
+<!-- INTRODUCTION -->
+<div class="card">
+<h2>Introduction</h2>
 
-        <div class="card">
-            <h3>Gamma Function</h3>
-            <p>Γ(n) = (n - 1)!</p>
-        </div>
+<p>
+Gamma and Beta functions are important special functions in mathematics.
+They are widely used in calculus, probability theory, physics, statistics,
+and engineering applications.
+</p>
 
-        <div class="card">
-            <h3>Beta Function</h3>
-            <p>B(x,y) = Γ(x)Γ(y) / Γ(x+y)</p>
-        </div>
-    </section>
+<p>
+The Gamma function extends the concept of factorial to real and complex numbers,
+while the Beta function is closely related to the Gamma function.
+</p>
 
-    <section id="graph">
-        <h2>Graphs</h2>
+</div>
 
-        <img src="https://upload.wikimedia.org/wikipedia/commons/e/e5/Gamma_Function.png" alt="Gamma Graph">
+<!-- GAMMA FUNCTION -->
+<div class="card">
+<h2>Gamma Function</h2>
 
-        <img src="https://upload.wikimedia.org/wikipedia/commons/7/74/Beta_Function.png" alt="Beta Graph">
-    </section>
+<p>
+The Gamma function is defined as:
+</p>
 
-    <section id="examples">
-        <h2>Solved Examples</h2>
+<div class="formula">
+$$\Gamma(n)=\int_0^\infty x^{n-1}e^{-x}dx$$
+</div>
 
-        <div class="card">
-            <h3>Example 1</h3>
-            <p>Find Γ(5)</p>
-            <p>Γ(5) = 4! = 24</p>
-        </div>
+<p>
+Relation with factorial:
+</p>
 
-        <div class="card">
-            <h3>Example 2</h3>
-            <p>Find B(2,3)</p>
-            <p>B(2,3)= Γ(2)Γ(3)/Γ(5)</p>
-        </div>
-    </section>
+<div class="formula">
+$$\Gamma(n+1)=n!$$
+</div>
 
-    <section id="quiz">
-        <h2>MCQ Quiz</h2>
+<h3>Properties</h3>
 
-        <div class="card">
-            <p>1. Gamma function is extension of?</p>
-            <button onclick="checkAnswer('a')">Factorial</button>
-            <button onclick="checkAnswer('b')">Matrix</button>
-        </div>
+<ul>
+<li>\(\Gamma(1)=1\)</li>
+<li>\(\Gamma(n+1)=n\Gamma(n)\)</li>
+<li>\(\Gamma\left(\frac{1}{2}\right)=\sqrt{\pi}\)</li>
+</ul>
 
-        <p id="result"></p>
-    </section>
+</div>
 
-    <section id="reference">
-        <h2>References</h2>
+<!-- BETA FUNCTION -->
+<div class="card">
+<h2>Beta Function</h2>
 
-        <ul>
-            <li>Engineering Mathematics Book</li>
-            <li>Wikipedia</li>
-            <li>Mathematics Notes</li>
-        </ul>
-    </section>
+<p>
+The Beta function is defined as:
+</p>
 
-    <footer>
-        <p>Created by Matrix Makers Team</p>
-    </footer>
+<div class="formula">
+$$B(m,n)=\int_0^1 x^{m-1}(1-x)^{n-1}dx$$
+</div>
+
+<p>
+Relation between Beta and Gamma functions:
+</p>
+
+<div class="formula">
+$$B(m,n)=\frac{\Gamma(m)\Gamma(n)}{\Gamma(m+n)}$$
+</div>
+
+<h3>Properties</h3>
+
+<ul>
+<li>\(B(m,n)=B(n,m)\)</li>
+<li>Beta function is symmetric</li>
+<li>Used in probability distributions</li>
+</ul>
+
+</div>
+
+<!-- SOLVED EXAMPLES -->
+<div class="card">
+<h2>Solved Examples</h2>
+
+<h3>Example 1</h3>
+
+<p>Evaluate \( \Gamma(5) \)</p>
+
+<div class="formula">
+$$\Gamma(5)=4!=24$$
+</div>
+
+<h3>Example 2</h3>
+
+<p>Evaluate \( B(2,3) \)</p>
+
+<div class="formula">
+$$B(2,3)=\frac{\Gamma(2)\Gamma(3)}{\Gamma(5)}$$
+</div>
+
+<div class="formula">
+$$=\frac{1! \times 2!}{4!}=\frac{2}{24}=\frac{1}{12}$$
+</div>
+
+</div>
+
+<!-- APPLICATIONS -->
+<div class="card">
+<h2>Applications</h2>
+
+<ul>
+<li>Engineering Mathematics</li>
+<li>Statistics and Probability</li>
+<li>Quantum Mechanics</li>
+<li>Machine Learning</li>
+<li>Signal Processing</li>
+<li>Thermodynamics</li>
+</ul>
+
+</div>
+
+<!-- QUIZ -->
+<div class="card">
+
+<h2>Quiz</h2>
+
+<div class="quiz-box">
+
+<p><b>1. What is \( \Gamma(4) \)?</b></p>
+
+<input type="radio" name="q1"> 6<br>
+<input type="radio" name="q1"> 24<br>
+<input type="radio" name="q1" id="correct1"> 3! = 6<br>
+
+<button onclick="checkQuiz()">Submit Quiz</button>
+
+<p id="result"></p>
+
+</div>
+
+</div>
+
+<!-- CONTRIBUTORS -->
+<div class="card">
+
+<h2>Contributors</h2>
+
+<ul>
+<li>Kranti Khade</li>
+<li>Project Team Members</li>
+<li>Engineering Mathematics Department</li>
+</ul>
+
+</div>
+
+<!-- FEEDBACK -->
+<div class="card">
+
+<h2>Feedback Form</h2>
+
+<form>
+
+<input type="text" placeholder="Enter your name" required>
+
+<input type="email" placeholder="Enter your email" required>
+
+<textarea rows="5" placeholder="Write your feedback"></textarea>
+
+<button type="submit">Submit</button>
+
+</form>
+
+</div>
+
+</div>
+
+<footer>
+<p>© 2026 Gamma-Beta Function Project | Developed using HTML, CSS & JavaScript</p>
+</footer>
 
 <script>
-function checkAnswer(answer) {
-    let result = document.getElementById("result");
 
-    if(answer === 'a') {
-        result.innerHTML = "Correct Answer!";
-    } else {
-        result.innerHTML = "Wrong Answer!";
-    }
+function checkQuiz(){
+
+if(document.getElementById("correct1").checked){
+document.getElementById("result").innerHTML =
+"Correct Answer!";
 }
+else{
+document.getElementById("result").innerHTML =
+"Wrong Answer. Try Again!";
+}
+
+}
+
 </script>
 
 </body>
